@@ -20,10 +20,6 @@ function useWiggle(config: { stiffness: number; damping: number }) {
       (child) => child.type === 'SkinnedMesh'
     ) as THREE.SkinnedMesh;
 
-    ref.current.children.find(
-      (child) => console.log(child.type)
-    ) as THREE.SkinnedMesh;
-
     if (!skinnedMesh) {
       console.log("[v0] No skinned mesh found in model - wiggle disabled")
       return

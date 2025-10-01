@@ -16,7 +16,7 @@ export default function Scene() {
 
   useFrame(() => {
     if (!wiggleRef.current) return;
-    wiggleRef.current.rotation.y += 0.0025;
+    wiggleRef.current.rotation.y += 0.0015;
   });
 
   return (
