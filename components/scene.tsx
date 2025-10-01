@@ -29,7 +29,6 @@ export default function Scene() {
     >
       <PresentationControls
           global
-          snap
           zoom={0.8}
           rotation={[0, Math.PI / 4, 0]}
           polar={[-Math.PI / 3, Math.PI / 3]}
