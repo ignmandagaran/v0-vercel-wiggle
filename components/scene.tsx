@@ -1,7 +1,7 @@
 "use client"
 
-import { useRef, useMemo } from "react"
-import { useFrame, useGraph } from "@react-three/fiber"
+import { useMemo } from "react"
+import { useGraph } from "@react-three/fiber"
 import { useGLTF, PresentationControls } from "@react-three/drei"
 import type { Group } from "three"
 import { useWiggle } from "@/hooks/use-wiggle"
@@ -17,8 +17,7 @@ export default function Scene() {
   return (
     <PresentationControls
         global
-        config={{ mass: 2, tension: 500 }}
-        snap={{ mass: 4, tension: 100 }}
+        snap
         rotation={[0, Math.PI / 4, 0]}
         polar={[-Math.PI / 3, Math.PI / 3]}
         azimuth={[-Math.PI / 1.4, Math.PI / 2]}
