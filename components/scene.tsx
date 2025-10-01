@@ -16,15 +16,15 @@ export default function Scene() {
 
   useFrame(() => {
     if (!wiggleRef.current) return;
-    wiggleRef.current.rotation.y += 0.01;
+    wiggleRef.current.rotation.y += 0.0025;
   });
 
   return (
     <Float
-      speed={5} 
+      speed={3} 
       rotationIntensity={0} 
       floatIntensity={1} 
-      floatingRange={[1, 1.1]} 
+      floatingRange={[1, 1.2]} 
       position={[0, -1, 0]}
     >
       <PresentationControls
