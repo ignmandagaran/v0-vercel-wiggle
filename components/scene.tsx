@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo } from "react"
-import { useGraph } from "@react-three/fiber"
+import { useGraph, useFrame } from "@react-three/fiber"
 import { useGLTF, PresentationControls } from "@react-three/drei"
 import type { Group } from "three"
 import { useWiggle } from "@/hooks/use-wiggle"
@@ -12,7 +12,12 @@ export default function Scene() {
   const clone = useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes } = useGraph(clone)
 
-  const wiggleRef = useWiggle({ stiffness: 180, damping: 10 })
+  const wiggleRef = useWiggle({ stiffness: 360, damping: 10 })
+
+  useFrame(() => {
+    if (!wiggleRef.current) return;
+    wiggleRef.current.rotation.y += 0.01;
+  });
 
   return (
     <PresentationControls
